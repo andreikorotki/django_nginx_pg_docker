@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <h1>Как со мной связаться</h1>
+    <p>
+        Email: example@example.com<br>
+        Телефон: +7 912 345-67-89
+    </p>
+{% endblock %}
+
+
+{% block feedback_and_leave_comment %}
+    <h3>Оставить заявку</h3>
+
+    <p style="color: red">{{ error }}</p>
+
+    <form action="/contacts" method="post">
+        {% csrf_token %}
+        <input type="text" name="contact_email" placeholder="Ваш email">
+        <br><br>
+        <textarea name="text" placeholder="Текст обращения"></textarea>
+        <br><br>
+        <button>Отправить</button>
+    </form>
+{% endblock %}

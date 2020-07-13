@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <a href="/">Главная</a>
+    <a href="/publications">Публикации</a>
+    <a href="/contacts">Контакты</a>
+    {% block content %}{% endblock %}
+    {% block feedback_and_leave_comment %}{% endblock %}
+    {% block comments %}{% endblock %}
+</body>
+</html>
